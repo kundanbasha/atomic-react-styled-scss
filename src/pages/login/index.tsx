@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Input } from "../../shared/atoms";
+import { LoginLayout } from "../../shared/layouts";
 import { setLocalItem, getLocalItem } from "../../utils/helpers";
 
 export default function Login() {
@@ -21,14 +22,16 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <Input
-        name="username"
-        value={username}
-        onChange={onInputChange}
-        type="text"
-      />
-      <Button type="submit">Submit</Button>
-    </form>
+    <LoginLayout>
+      <form onSubmit={onSubmit}>
+        <Input
+          name="username"
+          value={username}
+          onChange={onInputChange}
+          type="text"
+        />
+        <Button type="submit">Submit</Button>
+      </form>
+    </LoginLayout>
   );
 }

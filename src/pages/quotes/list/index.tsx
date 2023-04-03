@@ -8,7 +8,6 @@ export default function QuotesList() {
 
   return (
     <div>
-      <h2>Quotes</h2>
       {loading ? (
         <h4>Loading...</h4>
       ) : (
