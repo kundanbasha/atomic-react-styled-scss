@@ -1,20 +1,29 @@
-import React, { useState } from "react";
-import { Button, Input } from "./shared/atoms";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Authors from "./pages/authors";
+import Login from "./pages/login";
+import Quotes from "./pages/quotes";
 
 function App() {
-  const [username, setUsername] = useState<string | undefined>("");
   return (
     <div>
-      <Input
-        type="text"
-        value={username}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setUsername(e.target.value)
-        }
-      />
-      <Button>Submit</Button>
+      <RouterProvider router={router} />
     </div>
   );
 }
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/quotes",
+    element: <Quotes />,
+  },
+  {
+    path: "/authors",
+    element: <Authors />,
+  },
+]);
 
 export default App;

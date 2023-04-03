@@ -1,12 +1,11 @@
-import { ReactNode } from "react";
+import React from "react";
 import "./button.style.scss";
 
-function Button({ children }: Props) {
-  return <button>{children}</button>;
+function Button({
+  children,
+  ...rest
+}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  return <button {...rest}>{children}</button>;
 }
 
 export default Button;
-
-type Props = {
-  children: ReactNode;
-};
