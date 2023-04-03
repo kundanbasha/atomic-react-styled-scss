@@ -1,11 +1,11 @@
 import React from "react";
-import "./button.style.scss";
+import { StyledButton } from "./button.style";
 
 function Button({
   children,
   ...rest
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  return <button {...rest}>{children}</button>;
+  return <StyledButton {...rest}>{children}</StyledButton>;
 }
 
 export default Button;
