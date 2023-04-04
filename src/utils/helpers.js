@@ -6,6 +6,14 @@ export const removeLocalItem = (key) => localStorage.removeItem(key);
 //authentication check helper
 export const isLoggedIn = () => getLocalItem("username");
 
+//get favourities quotes from localstorage
+export const getFavouriteQuotes = () => {
+  let favs = getLocalItem("favourites") || "{}";
+  favs = favs ? JSON.parse(favs) : {};
+
+  return favs;
+};
+
 //fetch utility function
 let options = (method) => ({
   method: method,

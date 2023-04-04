@@ -16,8 +16,6 @@ export default function AppLayout({ children }: Props) {
     if (!username) redirectToLogin();
   }, [username]);
 
-  const handleFavourites = () => {};
-
   const handleLogout = () => {
     removeLocalItem("username");
     redirectToLogin();
@@ -25,7 +23,7 @@ export default function AppLayout({ children }: Props) {
 
   return (
     <div>
-      <Header handleLogout={handleLogout} handleFavourites={handleFavourites} />
+      <Header handleLogout={handleLogout} />
       {children}
     </div>
   );

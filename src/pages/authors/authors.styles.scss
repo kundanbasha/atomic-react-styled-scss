@@ -1,4 +1,5 @@
 @import "../../utils/scss-variables.scss";
+@import "../../utils/scss-mixins.scss";
 
 .authors-list{
   padding:0;
@@ -39,10 +40,7 @@
           padding-right:4px;
         }
         &.ellipsis{
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;  
-          overflow: hidden;
+          @include ellipsis(3)
         }
       }
     }

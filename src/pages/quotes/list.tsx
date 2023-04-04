@@ -1,17 +1,11 @@
-import { useEffect, useState } from "react";
-import QuoteItem from "./quote.item";
-import { getLocalItem, setLocalItem } from "../../utils/helpers";
+import { useFavouriteQuotes } from "../../shared/hooks";
+import { QuoteItem } from "../../shared/molecules";
 
 export default function QuotesList({ quotes }: { quotes: IQuote[] }) {
-  const [favouriteKeys, setFavouriteKeys] = useState<string[]>([]);
+  const { favouriteQuotesKeys, setFavouriteQuotes } = useFavouriteQuotes();
 
-  useEffect(() => {
-    const favs: any = getFavouriteQuotes();
-    setFavouriteKeys(Object.keys(favs));
-  }, []);
-
-  const updateFavouritesQuotes = (quoteKeys: string[]) => {
-    setFavouriteKeys(quoteKeys);
+  const updateFavouritesQuotes = (quotes: any) => {
+    setFavouriteQuotes(quotes);
   };
 
   return (
@@ -21,20 +15,13 @@ export default function QuotesList({ quotes }: { quotes: IQuote[] }) {
           <QuoteItem
             key={quote._id}
             quote={quote}
-            isFavourite={favouriteKeys.includes(quote._id)}
+            isFavourite={favouriteQuotesKeys.includes(quote._id)}
             updateFavouritesQuotes={updateFavouritesQuotes}
           />
         ))}
     </ul>
   );
 }
-
-export const getFavouriteQuotes = () => {
-  let favs: any = getLocalItem("favourites") || "{}";
-  favs = favs ? JSON.parse(favs) : {};
-
-  return favs;
-};
 
 export interface IQuote {
   author: string;

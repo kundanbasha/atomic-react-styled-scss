@@ -1,0 +1,6 @@
+@mixin ellipsis($rows:1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $rows;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}

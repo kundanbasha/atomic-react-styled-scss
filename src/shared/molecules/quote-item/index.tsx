@@ -1,21 +1,25 @@
 import { useState } from "react";
-import { IQuote } from "./list";
-import HeartIcon from "../../assets/icons/heart.svg";
-import FilledHeartIcon from "../../assets/icons/heart-filled.svg";
-import ArrowUpIcon from "../../assets/icons/arrow-up.svg";
-import ArrowDownIcon from "../../assets/icons/arrow-down.svg";
-import { setLocalItem } from "../../utils/helpers";
-import { getFavouriteQuotes } from "./list";
+import { IQuote } from "../../../pages/quotes/list";
+import HeartIcon from "../../../assets/icons/heart.svg";
+import FilledHeartIcon from "../../../assets/icons/heart-filled.svg";
+import ArrowUpIcon from "../../../assets/icons/arrow-up.svg";
+import ArrowDownIcon from "../../../assets/icons/arrow-down.svg";
+import { setLocalItem, getFavouriteQuotes } from "../../../utils/helpers";
+import "./quote-item.styles.scss";
 
 type Props = {
   quote: IQuote;
   isFavourite: boolean;
-  updateFavouritesQuotes: (quotesKeys: string[]) => void;
+  withAuthor?: boolean;
+  enableFavourite?: boolean;
+  updateFavouritesQuotes?: (quotes: any) => void;
 };
 
 export default function QuoteItem({
   quote,
   isFavourite,
+  withAuthor = false,
+  enableFavourite = true,
   updateFavouritesQuotes,
 }: Props) {
   const [expand, setExpand] = useState(false);
@@ -28,21 +32,23 @@ export default function QuoteItem({
     } else {
       delete favs[quote._id];
     }
-    updateFavouritesQuotes(Object.keys(favs));
+    updateFavouritesQuotes && updateFavouritesQuotes(favs);
     setLocalItem("favourites", JSON.stringify(favs));
   };
 
   return (
     <li className="quote-item">
       <div className="quote-item-header">
-        <p>{expand ? "" : quote.content}</p>
+        <p>{expand ? (withAuthor ? quote.author : "") : quote.content}</p>
         <div className="button-group">
-          <img
-            className="icon"
-            alt="Favourite"
-            src={isFavourite ? FilledHeartIcon : HeartIcon}
-            onClick={handleFavourite}
-          />
+          {enableFavourite ? (
+            <img
+              className="icon"
+              alt="Favourite"
+              src={isFavourite ? FilledHeartIcon : HeartIcon}
+              onClick={handleFavourite}
+            />
+          ) : null}
           <img
             className="icon"
             onClick={() => setExpand(!expand)}

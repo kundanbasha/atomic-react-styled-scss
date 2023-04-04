@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Authors from "./pages/authors";
+import Favourites from "./pages/favourites";
 import Login from "./pages/login";
 import Quotes from "./pages/quotes";
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/authors",
     element: <Authors />,
+  },
+  {
+    path: "/favourites",
+    element: <Favourites />,
   },
 ]);
 
