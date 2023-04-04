@@ -8,6 +8,10 @@ export const HeaderWrap = styled.header`
   top: 0;
   padding: 12px 0;
 
+  .quotes-title {
+    text-decoration: none;
+  }
+
   h1 {
     color: white;
   }
@@ -19,13 +23,23 @@ export const HeaderWrap = styled.header`
     padding: 12px 0;
   }
 
+  @keyframes crescendo {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.5);
+    }
+  }
+
   .button-group {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 32px;
     svg {
       height: 28px;
       width: fit-content;
+      animation: crescendo 1.3s alternate infinite ease-in;
       path {
         fill: ${variables.grey};
         &:hover {

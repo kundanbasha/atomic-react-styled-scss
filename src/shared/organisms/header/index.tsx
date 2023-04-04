@@ -11,7 +11,9 @@ export default function Header({ handleLogout }: Props) {
   return (
     <HeaderWrap>
       <Container className="header-container">
-        <h1>Quotes</h1>
+        <Link to="/" className="quotes-title">
+          <h1>Quotes</h1>
+        </Link>
         <div className="button-group">
           <Link to="/favourites">{HeartIcon}</Link>
           <Button onClick={handleLogout}>Logout</Button>
