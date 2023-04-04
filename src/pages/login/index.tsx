@@ -6,7 +6,7 @@ import { setLocalItem, getLocalItem } from "../../utils/helpers";
 
 export default function Login() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState(getLocalItem() || "");
+  const [username, setUsername] = useState(getLocalItem("username") || "");
 
   useEffect(() => {
     if (username) navigate("/authors");

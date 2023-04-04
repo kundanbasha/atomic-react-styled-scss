@@ -1,10 +1,10 @@
 //localstorge helpers
-export const getLocalItem = () => localStorage.getItem("username");
+export const getLocalItem = (key) => localStorage.getItem(key);
 export const setLocalItem = (key, value) => localStorage.setItem(key, value);
 export const removeLocalItem = (key) => localStorage.removeItem(key);
 
 //authentication check helper
-export const isLoggedIn = () => getLocalItem();
+export const isLoggedIn = () => getLocalItem("username");
 
 //fetch utility function
 let options = (method) => ({

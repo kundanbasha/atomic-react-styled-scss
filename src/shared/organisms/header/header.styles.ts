@@ -3,6 +3,9 @@ import variables from "../../../utils/style-variables";
 
 export const HeaderWrap = styled.header`
   background-color: ${variables.red};
+  position: sticky;
+  top: 0;
+  padding: 12px 0;
 
   h1 {
     color: white;
