@@ -7,6 +7,7 @@ export const HeaderWrap = styled.header`
   z-index: 2;
   top: 0;
   padding: 12px 0;
+  margin-bottom: 24px;
 
   .quotes-title {
     text-decoration: none;

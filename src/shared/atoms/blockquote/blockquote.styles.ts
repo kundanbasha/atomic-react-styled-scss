@@ -32,4 +32,17 @@ export const StyledBlockquote = styled.blockquote`
     right: -5rem;
     bottom: 1rem;
   }
+
+  @media screen and (max-width: 480px) {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    &:before {
+      left: -1rem;
+      top: -2rem;
+    }
+    &:after {
+      right: 1rem;
+      bottom: 0rem;
+    }
+  }
 `;

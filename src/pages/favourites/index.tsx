@@ -8,7 +8,11 @@ export default function Favourites() {
   return (
     <AppLayout>
       <Container className="favourites-container">
-        <LabeledHeading label="" value={"Favourite List"} />
+        <LabeledHeading
+          label=""
+          value={"Favourite List"}
+          style={{ marginLeft: "-8px" }}
+        />
         <FavouriteList />
       </Container>
     </AppLayout>

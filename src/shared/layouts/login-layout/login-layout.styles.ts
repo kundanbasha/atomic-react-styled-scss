@@ -18,4 +18,12 @@ export const LoginWrap = styled.div`
     align-items: center;
     justify-content: center;
   }
+  @media screen and (max-width: 480px) {
+    .quote-section {
+      display: none;
+    }
+    .form-section {
+      width: 100%;
+    }
+  }
 `;

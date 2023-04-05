@@ -1,7 +1,7 @@
 import { Container } from "../../shared/atoms";
 import { useFetch } from "../../shared/hooks";
 import { AppLayout } from "../../shared/layouts";
-import { NotFound } from "../../shared/molecules";
+import { LabeledHeading, NotFound } from "../../shared/molecules";
 import { AUTHORS } from "../../utils/endpoints";
 import AuthorsList from "./list";
 import "./authors.styles.scss";
@@ -12,6 +12,11 @@ export default function Authors() {
   return (
     <AppLayout>
       <Container>
+        <LabeledHeading
+          label=""
+          value={"Authors List"}
+          style={{ marginLeft: "-8px" }}
+        />
         {loading ? (
           <h4>Loading...</h4>
         ) : authors?.length ? (

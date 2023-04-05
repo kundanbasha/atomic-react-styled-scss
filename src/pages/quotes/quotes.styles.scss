@@ -2,17 +2,6 @@
 @import "../../utils/scss-mixins.scss";
 
 .quotes-container {
-  .label-heading-wrap {
-    margin-top: 24px;
-    align-items: flex-start;
-    label {
-      opacity: 0.5;
-    }
-  }
-  .value {
-    font-size: 28px;
-    line-height: 40px;
-  }
 }
 
 ul.quotes-wrap {

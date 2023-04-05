@@ -1,21 +1,20 @@
 @import "../../utils/scss-variables.scss";
 @import "../../utils/scss-mixins.scss";
 
-.authors-list{
-  padding:0;
+.authors-list {
+  padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap:24px;
-  margin-top: 48px;
-  a{
+  gap: 24px;
+  a {
     text-decoration: none;
-    width:324px;
-    box-shadow: 0 0 4px 4px rgba(0,0,0,0.1);
-    border-radius: 4px; 
+    width: 324px;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
   }
-  li{
-    .avatar-wrap{
+  li {
+    .avatar-wrap {
       width: 100%;
       background-color: $grey;
       display: flex;
@@ -24,25 +23,33 @@
       height: 148px;
       border-radius: 4px 4px 0 0;
     }
-    .details{
+    .details {
       padding: 12px;
-      h3{
-        color:$grey-dark;
-        margin:0
+      h3 {
+        color: $grey-dark;
+        margin: 0;
       }
-      p{
-        color:$grey;
+      p {
+        color: $grey;
         margin: 0;
         line-height: 28px;
-        span{
-          color:$grey-dark;
+        span {
+          color: $grey-dark;
           font-weight: 600;
-          padding-right:4px;
+          padding-right: 4px;
         }
-        &.ellipsis{
-          @include ellipsis(3)
+        &.ellipsis {
+          @include ellipsis(3);
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .authors-list {
+    a {
+      width: 100%;
     }
   }
 }
