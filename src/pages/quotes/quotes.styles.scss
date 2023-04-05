@@ -8,3 +8,18 @@ ul.quotes-wrap {
   list-style: none;
   padding: 0;
 }
+
+.quotes-shimmer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  .shimmer-wrap {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 4px 4px $red-15;
+    border-radius: 4px;
+    gap: 16px;
+  }
+}

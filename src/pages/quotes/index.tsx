@@ -1,4 +1,5 @@
 import QuotesList from "./list";
+import QuotesShimmer from "./shimmer";
 import { AppLayout } from "../../shared/layouts";
 import { Container } from "../../shared/atoms";
 import { useSearchParams } from "react-router-dom";
@@ -22,7 +23,7 @@ export default function Quotes() {
           direction="column"
         />
         {loading ? (
-          <div>Loading...</div>
+          <QuotesShimmer />
         ) : quotes && quotes.length ? (
           <QuotesList quotes={quotes} />
         ) : (

@@ -18,7 +18,7 @@ export const LabeledHeadingWrap = styled.div`
 
   .value {
     color: ${variables.greyDark};
-    font-size: 28px;
+    font-size: 20px;
     line-height: 40px;
   }
 `;

@@ -46,6 +46,24 @@
   }
 }
 
+.shimmer-list {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  .shimmer-wrap {
+    width: 324px;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  .details-shimmer {
+    padding: 12px;
+    div {
+      margin-top: 8px;
+    }
+  }
+}
+
 @media screen and (max-width: 480px) {
   .authors-list {
     a {

@@ -5,6 +5,7 @@ import { LabeledHeading, NotFound } from "../../shared/molecules";
 import { AUTHORS } from "../../utils/endpoints";
 import AuthorsList from "./list";
 import "./authors.styles.scss";
+import AuthorsShimmer from "./shimmer";
 
 export default function Authors() {
   const { loading, data: authors, error } = useFetch(AUTHORS);
@@ -18,7 +19,7 @@ export default function Authors() {
           style={{ marginLeft: "-8px" }}
         />
         {loading ? (
-          <h4>Loading...</h4>
+          <AuthorsShimmer />
         ) : authors?.length ? (
           <AuthorsList authors={authors} />
         ) : (
