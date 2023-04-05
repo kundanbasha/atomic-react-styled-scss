@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Input } from "../../shared/atoms";
 import { LoginLayout } from "../../shared/layouts";
+import { LabeledInput } from "../../shared/molecules";
 import { setLocalItem, getLocalItem } from "../../utils/helpers";
+import "./login.styles.scss";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -23,13 +25,16 @@ export default function Login() {
 
   return (
     <LoginLayout>
-      <form onSubmit={onSubmit}>
-        <Input
-          name="username"
-          value={username}
-          onChange={onInputChange}
-          type="text"
-        />
+      <form onSubmit={onSubmit} className="login-form">
+        <LabeledInput label="Username" direction="column" labelSize="16px">
+          <Input
+            name="username"
+            value={username}
+            onChange={onInputChange}
+            type="text"
+            placeholder="Enter Username"
+          />
+        </LabeledInput>
         <Button type="submit">Submit</Button>
       </form>
     </LoginLayout>
