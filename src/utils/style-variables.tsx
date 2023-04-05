@@ -10,7 +10,7 @@ const variables = {
   greyDark: "#031424",
   lightBlue: "#8eaebd",
 
-  shimmerGrey: "rgba(48, 65, 93,0.25)",
+  shimmerGrey: "rgba(48, 65, 93,0.15)",
 };
 
 export default variables;
