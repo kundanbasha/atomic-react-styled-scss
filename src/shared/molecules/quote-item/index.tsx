@@ -6,6 +6,7 @@ import ArrowUpIcon from "../../../assets/icons/arrow-up.svg";
 import ArrowDownIcon from "../../../assets/icons/arrow-down.svg";
 import { setLocalItem, getFavouriteQuotes } from "../../../utils/helpers";
 import "./quote-item.styles.scss";
+import { Blockquote } from "../../atoms";
 
 type Props = {
   quote: IQuote;
@@ -59,7 +60,7 @@ export default function QuoteItem({
       </div>
       {expand && (
         <div className="expanded-quote">
-          <blockquote>{quote.content}</blockquote>
+          <Blockquote>{quote.content}</Blockquote>
         </div>
       )}
     </li>

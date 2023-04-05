@@ -3,13 +3,14 @@ import { AppLayout } from "../../shared/layouts";
 import { Container } from "../../shared/atoms";
 import { useSearchParams } from "react-router-dom";
 import { useFetch } from "../../shared/hooks";
+import { LabeledHeading, NotFound } from "../../shared/molecules";
+import { QUOTES } from "../../utils/endpoints";
 import "./quotes.styles.scss";
-import { LabeledHeading } from "../../shared/molecules";
 
 export default function Quotes() {
   const [searchParams, setSearchParams] = useSearchParams();
   const author = searchParams.get("author");
-  const { loading, data: quotes, error } = useFetch(`quotes?author=${author}`);
+  const { loading, data: quotes, error } = useFetch(`${QUOTES}${author}`);
 
   return (
     <AppLayout>
@@ -20,7 +21,13 @@ export default function Quotes() {
           labelSize="16px"
           direction="column"
         />
-        {loading ? <div>Loading...</div> : <QuotesList quotes={quotes} />}
+        {loading ? (
+          <div>Loading...</div>
+        ) : quotes && quotes.length ? (
+          <QuotesList quotes={quotes} />
+        ) : (
+          <NotFound />
+        )}
       </Container>
     </AppLayout>
   );
