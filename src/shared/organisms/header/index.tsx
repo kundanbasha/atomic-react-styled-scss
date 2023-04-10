@@ -4,7 +4,7 @@ import { Button } from "../../atoms";
 import { Link } from "react-router-dom";
 
 type Props = {
-  handleLogout: () => void;
+  handleLogout?: () => void;
 };
 
 export default function Header({ handleLogout }: Props) {
