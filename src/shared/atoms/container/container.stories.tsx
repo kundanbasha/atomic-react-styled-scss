@@ -10,7 +10,9 @@ export default {
 type Story = StoryObj<typeof Container> & { children: ReactNode };
 
 export const ContainerComponent = {
-  render: ({ children, ...args }: Story) => <Container>{children}</Container>,
+  render: ({ children, ...args }: Story) => (
+    <Container {...args}>{children}</Container>
+  ),
   args: {
     children: <h1>Hello world</h1>,
   },
