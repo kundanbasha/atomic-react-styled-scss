@@ -8,13 +8,13 @@ const Comp = () => (
   </BrowserRouter>
 );
 
-test("check Quotes text present in the dom", () => {
+it("should check Quotes text present in the dom", () => {
   const { getByText } = render(<Comp />);
 
   expect(getByText(/Quotes/i)).toBeInTheDocument();
 });
 
-test("check button present in the dom", () => {
+it("should check button present in the dom", () => {
   const { getByRole, getByText } = render(<Comp />);
 
   expect(getByRole(/button/i)).toBeInTheDocument();

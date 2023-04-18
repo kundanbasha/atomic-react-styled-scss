@@ -8,6 +8,7 @@ interface event {
 export interface basicInterface extends event {
   id?: string;
   type?: string;
+  defaultValue?: string;
   placeholder?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   // onChange?: ({ target }: { target: event }) => void;
