@@ -5,19 +5,23 @@ import { LabeledHeadingWrap } from "./labeled-heading.styles";
 type Props = {
   label: string;
   children: ReactNode;
+  labeledFor?: string;
   direction?: string;
   labelSize?: string;
 };
 
 export default function LabeledInput({
   label,
+  labeledFor,
   children,
   direction,
   labelSize,
 }: Props) {
   return (
     <LabeledHeadingWrap className="label-heading-wrap" direction={direction}>
-      <Label size={labelSize}>{label}</Label>
+      <Label labeledFor={labeledFor} size={labelSize}>
+        {label}
+      </Label>
       {children}
     </LabeledHeadingWrap>
   );

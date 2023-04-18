@@ -5,6 +5,8 @@ import { LabeledHeadingWrap } from "./labeled-heading.styles";
 type Props = {
   label: string;
   value: string | null;
+  valueId: string;
+  labeledFor?: string;
   direction?: string;
   labelSize?: string;
   style?: CSSProperties;
@@ -13,6 +15,8 @@ type Props = {
 export default function LabeledHeading({
   label,
   value,
+  valueId,
+  labeledFor,
   direction,
   labelSize,
   style,
@@ -23,8 +27,12 @@ export default function LabeledHeading({
       direction={direction}
       style={style}
     >
-      <Label size={labelSize}>{label}</Label>
-      <h3 className="value">{value}</h3>
+      <Label labeledFor={labeledFor} size={labelSize}>
+        {label}
+      </Label>
+      <h3 id={valueId} className="value">
+        {value}
+      </h3>
     </LabeledHeadingWrap>
   );
 }

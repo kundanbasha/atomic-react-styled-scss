@@ -16,7 +16,9 @@ export default function Header({ handleLogout }: Props) {
         </Link>
         <div className="button-group">
           <Link to="/favourites">{HeartIcon}</Link>
-          <Button onClick={handleLogout}>Logout</Button>
+          <Button role="button" onClick={handleLogout}>
+            Logout
+          </Button>
         </div>
       </Container>
     </HeaderWrap>
@@ -32,7 +34,7 @@ const HeartIcon = (
       width="800px"
       height="800px"
       viewBox="0 0 64 64"
-      enable-background="new 0 0 64 64"
+      enableBackground="new 0 0 64 64"
     >
       <path
         fill="#031424"

@@ -26,8 +26,14 @@ export default function Login() {
   return (
     <LoginLayout>
       <form onSubmit={onSubmit} className="login-form">
-        <LabeledInput label="Username" direction="column" labelSize="16px">
+        <LabeledInput
+          labeledFor="username"
+          label="Username"
+          direction="column"
+          labelSize="16px"
+        >
           <Input
+            id="username"
             name="username"
             value={username}
             onChange={onInputChange}
